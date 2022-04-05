@@ -1,6 +1,7 @@
 import React from 'react'
-import ItemListContainer from './componets/itemListContainer/itemListContainer';
-import Navbar from './componets/navBar/navbar';
+import ItemListContainer from './Components/itemListContainer/itemListContainer';
+import Navbar from './Components/NavBar/NavBar';
+import ItemCount from './Components/ItemCount/ItemCount';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <Navbar/>
 <div>
   <ItemListContainer greeting = {'Bienvenido a esta tienda'}/>
+  <ItemCount />
   </div>
 </main>
   
