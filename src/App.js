@@ -1,7 +1,8 @@
-import React from 'react'
-import ItemListContainer from './Components/itemListContainer/itemListContainer';
+import React from 'react';
 import Navbar from './Components/NavBar/NavBar';
 import ItemCount from './Components/ItemCount/ItemCount';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+
 
 
 function App() {
