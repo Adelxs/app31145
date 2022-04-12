@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import  { getProducts } from '../asyncmock'
+import  { getProducts } from '../../asyncmock'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
         <div >
             
             
-                    <ItemDetail /> :
+                    <ItemDetail  /> :
                 
             
         </div>
