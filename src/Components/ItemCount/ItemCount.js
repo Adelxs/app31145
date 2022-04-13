@@ -1,30 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react'
 
+const Counter = ({initial, stock, onAdd}) => {
+    const [count, setCount] = useState(initial)
+ 
+    useEffect(() => {
+        let isActive = true
 
-const ItemCount = ({inicial}) => {
+        setTimeout(() => {
+            if(isActive) {
+                setCount(0)       
+            }
+        }, 3000)
 
-    const [count, setCount] = useState(1)
+        return (() => {
+            isActive = false
+            
+        })
+    })
+
+    useEffect(() => {
+    }, [count])
+
 
     const decrement = () => {
+        if (count > initial) 
         setCount(count - 1)
     }
 
     const increment = () => {
+        if (count < stock)
         setCount(count + 1)
     }
 
-    console.log(setCount)
+   
+    return(
+        <div>
+            <button onClick={decrement}>-</button> 
+            <p>{count}</p>
+            <button onClick={increment}>+</button>
+            <button onClick={() => onAdd(count)}>Agregar al carrito</button>
+        </div>
+    )
+} 
 
-    return (
-        <div className="contador">
-            <h3>Contador</h3>
-            <div className="count">
-                <button onClick={increment}>+</button>
-                <p>{count}</p>
-                <button onClick={decrement}>-</button>
-            </div>
-        
-        </div>)
-}
-
-export default ItemCount
+export default Counter
