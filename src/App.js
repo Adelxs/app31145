@@ -1,28 +1,33 @@
-import { useState } from 'react'
+
 import React from 'react';
 import Navbar from './Components/NavBar/NavBar';
-import Counter from './Components/ItemCount/ItemCount';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 
 
 function App() {
   const title = "Ecommerce"
 
-  const [show, setShow] = useState(true)
 
-  const handleOnAdd = (quantity) => {
-    console.log(`se agregaron ${quantity} productos`)}
   return (
-    <main>
-    <Navbar/>
-<div>
-  <ItemListContainer greeting = {'Bienvenido a esta tienda'}/>
-  <ItemDetailContainer/>
-  <Counter initial={0} stock={10} onAdd={handleOnAdd}/> 
-  </div>
-</main>
+    <div className="App">
+        
+        <BrowserRouter>
+          <Navbar />
+          
+        
+          <Routes>
+           
+            <Route path='*' element={<h1>NOT FOUND 404</h1>}/>
+            <Route path='/' element={<ItemListContainer />} />
+            <Route path='/category/:categoryId' element={<ItemListContainer />} />
+        
+            
+          </Routes>
+        </BrowserRouter>
+        
+      </div>
   
         
   )
