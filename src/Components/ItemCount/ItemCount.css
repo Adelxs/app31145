@@ -1,0 +1,15 @@
+
+    .end {
+        width: 200px;
+        height: 30px;
+        background-color: rgb(67, 67, 67);
+        color: white;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+
+    .end a {
+        text-decoration: none;
+        color: white;
+    }

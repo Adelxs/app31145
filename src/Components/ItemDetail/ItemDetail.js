@@ -1,10 +1,11 @@
 import './ItemDetail.css'
+import Counter from '../ItemCount/ItemCount'
 
 
-const ItemDetail = ({  name, img, category, description, price}) => {
-
-
-
+const ItemDetail = ({  name, img}) => {
+    const handleOnAdd = (quantity) => {
+        console.log(`se agregaron ${quantity} productos`)}
+    
     return (
         <article >
             <header >
@@ -27,7 +28,10 @@ const ItemDetail = ({  name, img, category, description, price}) => {
                     Precio: $100.000
                 </p>
             </section>           
-        
+            <footer>
+            <Counter initial={0} stock={10} onAdd={handleOnAdd}/> 
+            
+            </footer>
         </article>
     )
 }
